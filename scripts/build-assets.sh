@@ -43,6 +43,14 @@ image "$ART/Baker Bhai.jpg" art-baker-bhai 1280
 image "$ART/marzuk.jpg" art-marzuk 1280
 image "$MEME/IMG_4112.jpeg" meme-page 1000
 
+# Favicons: square crop of the face from the headshot
+mkdir -p assets/icon
+magick IMG_4154.jpeg -crop 620x620+138+200 +repage -strip face.tmp.png
+magick face.tmp.png -resize 180x180 -colors 128 -define png:compression-level=9 PNG8:assets/icon/apple-touch-icon.png
+magick face.tmp.png -resize 192x192 -colors 128 -define png:compression-level=9 PNG8:assets/icon/icon-192.png
+magick face.tmp.png -define icon:auto-resize=32,16 assets/icon/favicon.ico
+rm face.tmp.png
+
 # Videos
 video "$DOC/ElevenLabs_2026-08-27T19_31_58_Yair - Clear, Friendly, Expressive_pvc_sp100_s50_sb75_v3_2.mp4" doc-mourinho 8 1280
 video "$JAARDO/perfect for post.mov" jaardo-signboard 24 720
