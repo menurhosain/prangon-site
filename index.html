@@ -22,7 +22,8 @@
 
   <header class="topbar">
     <a class="topbar__name" href="#top">Prangon Sheikh</a>
-    <nav aria-label="Sections">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="topbar__nav" id="site-nav" aria-label="Sections">
       <ul class="topbar__links">
         <li><a href="#jaardo">Jaardo</a></li>
         <li><a href="#documentary">Documentary</a></li>
@@ -31,6 +32,10 @@
         <li><a href="#memes">Memes</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="board topbar__board">
+        <a class="board__link" href="mailto:Sheikhprangon@gmail.com">Sheikhprangon@gmail.com</a>
+        <a class="board__link" href="tel:+8801969576686">+880 1969-576686</a>
+      </div>
     </nav>
   </header>
 
@@ -226,26 +231,29 @@
         <div class="head">
           <h2 class="head__title head__title--bn" id="art-title" lang="bn">আর্ট-ফার্ট</h2>
           <p class="head__role">Illustration, 2018 to 2020. Made entirely with fingers and a phone.</p>
-        </div>
-        <div class="art__grid">
           <p class="art__note">No tablet, no stylus, just a phone screen and a thumb. These started as fun and became the look of my meme page: footballers with crowns, and 90s natok heroes dropped into GTA.</p>
-          <figure class="still art__sq">
+        </div>
+        <!-- Justified rows: each piece grows by its aspect ratio (--r) so a row shares one height -->
+        <div class="art__row">
+          <figure class="still art__sq" style="--r: 1">
             <img src="assets/img/art-dinho.webp" alt="Illustration of Ronaldinho in a melting yellow Brazil shirt, wearing a gold crown" width="1000" height="1000" loading="lazy">
             <figcaption>Dinho</figcaption>
           </figure>
-          <figure class="still art__sq">
-            <img src="assets/img/art-face.webp" alt="Illustrated portrait of a grinning young man with curly hair and round glasses on orange" width="1000" height="1000" loading="lazy">
-            <figcaption>Face</figcaption>
-          </figure>
-          <figure class="still">
+          <figure class="still art__wide" style="--r: 1.7778">
             <img src="assets/img/art-420.webp" alt="GTA San Andreas style illustration of two natok actors in suits standing back to back" width="1280" height="720" loading="lazy">
             <figcaption>420</figcaption>
           </figure>
-          <figure class="still">
+          <figure class="still art__sq" style="--r: 1">
+            <img src="assets/img/art-face.webp" alt="Illustrated portrait of a grinning young man with curly hair and round glasses on orange" width="1000" height="1000" loading="lazy">
+            <figcaption>Face</figcaption>
+          </figure>
+        </div>
+        <div class="art__row">
+          <figure class="still art__wide" style="--r: 1.7778">
             <img src="assets/img/art-baker-bhai.webp" alt="GTA San Andreas style illustration of three natok characters at a table with guns and a bottle" width="1280" height="728" loading="lazy">
             <figcaption>Baker Bhai</figcaption>
           </figure>
-          <figure class="still">
+          <figure class="still art__wide" style="--r: 1.7778">
             <img src="assets/img/art-marzuk.webp" alt="GTA V style illustration of a man in a cap walking past a liquor store" width="1280" height="632" loading="lazy">
             <figcaption>Marzuk</figcaption>
           </figure>

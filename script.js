@@ -20,3 +20,34 @@ document.addEventListener("play", (event) => {
     if (v !== event.target) v.pause();
   });
 }, true);
+
+// Mobile menu: full-screen panel toggled by the Menu tag.
+const topbar = document.querySelector(".topbar");
+const menuBtn = document.querySelector(".menu-btn");
+
+function setMenu(open) {
+  topbar.classList.toggle("is-open", open);
+  document.body.classList.toggle("menu-open", open);
+  menuBtn.setAttribute("aria-expanded", String(open));
+  menuBtn.textContent = open ? "Close" : "Menu";
+}
+
+menuBtn.addEventListener("click", () => {
+  setMenu(menuBtn.getAttribute("aria-expanded") !== "true");
+});
+
+topbar.querySelectorAll(".topbar__nav a").forEach((link) => {
+  link.addEventListener("click", () => setMenu(false));
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && topbar.classList.contains("is-open")) {
+    setMenu(false);
+    menuBtn.focus();
+  }
+});
+
+// Leaving phone width with the menu open would leave the page scroll-locked.
+matchMedia("(max-width: 600px)").addEventListener("change", (event) => {
+  if (!event.matches) setMenu(false);
+});
